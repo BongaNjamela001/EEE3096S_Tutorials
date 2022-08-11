@@ -1,0 +1,128 @@
+bonga@bonga:~$ sudo apt update
+[sudo] password for bonga: 
+Sorry, try again.
+[sudo] password for bonga: 
+Hit:1 http://za.archive.ubuntu.com/ubuntu focal InRelease
+Hit:2 http://za.archive.ubuntu.com/ubuntu focal-updates InRelease                                                                                         
+Hit:3 http://za.archive.ubuntu.com/ubuntu focal-backports InRelease                                                                                                                          
+Hit:4 http://ppa.launchpad.net/kicad/kicad-6.0-releases/ubuntu focal InRelease                                                                                                               
+Ign:5 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 InRelease                                                                                                                    
+Hit:6 http://dell.archive.canonical.com focal InRelease                                                                                              
+Get:7 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]                                                                      
+Hit:8 http://ppa.launchpad.net/maarten-fonville/android-studio/ubuntu focal InRelease                                                                    
+Hit:9 https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 Release                                                                                 
+Hit:10 http://ppa.launchpad.net/mmk2410/intellij-idea/ubuntu focal InRelease                                                      
+Hit:11 https://dl.google.com/linux/chrome/deb stable InRelease                 
+Hit:13 http://ppa.launchpad.net/sunderme/texstudio/ubuntu focal InRelease             
+Get:14 http://security.ubuntu.com/ubuntu focal-security/main amd64 DEP-11 Metadata [40.7 kB]
+Get:15 http://security.ubuntu.com/ubuntu focal-security/universe amd64 DEP-11 Metadata [77.3 kB]
+Get:16 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 DEP-11 Metadata [2,464 B]
+Fetched 234 kB in 2s (114 kB/s)                                               
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+All packages are up to date.
+bonga@bonga:~$ cd /media/bonga/Elements/leroy/UCT\ BEng\ Electrical\ \&\ Computer\ Engineering/III/2022/Semester\ II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/
+bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01$ ls
+'2022 EEE3096S Tutorial 1.pdf'
+bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01$ mkdir -p 3096-Pracs-NJMLUN002/Prac1
+bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01$ cd 3096-Pracs-NJMLUN002/Prac1/
+bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1$ touch main.c
+bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1$ gedit main.c
+
+(gedit:8252): IBUS-WARNING **: 10:48:23.192: Unable to connect to ibus: Could not connect: Connection refused
+bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1$ gcc -g main.c
+bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1$ ./a.out 
+Enter a value for a: 25
+Enter a value for b: 35
+The sum of a and b is -564160509 
+.bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1$ gdb a.out
+GNU gdb (Ubuntu 9.2-0ubuntu1~20.04.1) 9.2
+Copyright (C) 2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...
+(gdb) break 7
+Breakpoint 1 at 0x11cd: file main.c, line 8.
+(gdb) break 10
+Breakpoint 2 at 0x11f6: file main.c, line 11.
+(gdb) break 12
+Breakpoint 3 at 0x1201: file main.c, line 13.
+(gdb) run
+Starting program: /media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1/a.out 
+Enter a value for a: 25
+
+Breakpoint 1, main () at main.c:8
+8               printf("Enter a value for b: ");
+(gdb) 35
+Undefined command: "35".  Try "help".
+(gdb) print a
+$1 = 25
+(gdb) c
+Continuing.
+Enter a value for b: 35
+
+Breakpoint 2, main () at main.c:11
+11              sum = a + b;
+(gdb) print b
+$2 = -8672
+(gdb) print a
+$3 = 35
+(gdb) 
+$4 = 35
+(gdb) q
+A debugging session is active.
+
+        Inferior 1 [process 9525] will be killed.
+
+Quit anyway? (y or n) y
+bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1$ gedit main.c 
+
+(gedit:10058): IBUS-WARNING **: 11:01:03.985: Unable to connect to ibus: Could not connect: Connection refused
+bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1$ ./a.out 
+Enter a value for a: 25
+Enter a value for b: 35
+The sum of a and b is 311891219 
+.bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1$ gedit main.c
+
+(gedit:10084): IBUS-WARNING **: 11:02:06.242: Unable to connect to ibus: Could not connect: Connection refused
+q    
+^C
+bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1$ gcc -g main.c
+main.c: In function ‘main’:
+main.c:6:10: warning: format ‘%d’ expects argument of type ‘int *’, but argument 2 has type ‘int’ [-Wformat=]
+    6 |  scanf("%d", a);
+      |         ~^   ~
+      |          |   |
+      |          |   int
+      |          int *
+main.c:9:10: warning: format ‘%d’ expects argument of type ‘int *’, but argument 2 has type ‘int’ [-Wformat=]
+    9 |  scanf("%d", b);
+      |         ~^   ~
+      |          |   |
+      |          |   int
+      |          int *
+bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1$ gedit main.c
+
+(gedit:10172): IBUS-WARNING **: 11:03:10.927: Unable to connect to ibus: Could not connect: Connection refused
+bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1$ gedit main.c
+
+(gedit:10186): IBUS-WARNING **: 11:03:29.603: Unable to connect to ibus: Could not connect: Connection refused
+^C
+bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1$ gcc -g main.c
+bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1$ ./a.out
+Enter a value for a: 35
+Enter a value for b: 25
+The sum of a and b is 60 
+.bonga@bonga:/media/bonga/Elements/leroy/UCT BEng Electrical & Computer Engineering/III/2022/Semester II/EEE3096S/EEE3096S_Tutorials/EEE3096S_Tut_01/3096-Pracs-NJMLUN002/Prac1$ 
